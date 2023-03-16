@@ -1,0 +1,22 @@
+int red;
+int g;
+int b;
+
+void main() {
+    PWM1_Init(10000);
+    PWM1_Start();
+    PWM2_Init(10000);
+    PWM2_Start();
+    while (1) {
+       for (red = 0; red <= 255; red++) {
+            PWM1_Set_Duty(red);
+            delay_ms(10);
+       }
+       for (g = 0; g <= 255; g++) {
+            PWM2_Set_Duty(g);
+            delay_ms(10);
+       }
+    }
+    
+    
+}
